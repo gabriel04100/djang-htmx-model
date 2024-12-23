@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pyproj"
+version = "0.1.0"
+description = ""
+authors = ["gabriel04100 <gabrielp@outlook.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+scikit-learn = "^1.6.0"
+numpy = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
