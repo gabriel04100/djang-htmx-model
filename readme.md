@@ -1,0 +1,1 @@
+example of how to use django and htmx to have a model integrated in a django website
