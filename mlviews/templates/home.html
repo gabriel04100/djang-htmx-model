@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Prediction</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <h1>Flower Type Prediction</h1>
+    <p>Enter sepal length, sepal width, petal length, petal width:</p>
+    
+    <!-- Validation trigger -->
+    <form hx-post="/" hx-trigger="submit" hx-target="#result" hx-swap="innerHTML">
+        {% csrf_token %}
+        <input 
+            type="text" 
+            name="features" 
+            placeholder="5.1,3.5,1.4,0.2" 
+            hx-post="/validate/" 
+            hx-trigger="keyup" 
+            hx-target="#validation-message" 
+            hx-swap="innerHTML"
+            required>
+        <div id="validation-message" style="margin-bottom: 10px;"></div>
+        <button type="submit">Predict</button>
+    </form>
+    
+    <div id="result">
+        <!-- Prediction result will be dynamically injected here -->
+    </div>
+</body>
+</html>
+
